@@ -1,11 +1,12 @@
 // Create Related CR
-//loadScript("/CustomSpace/CreateRelatedCR/CreateRelatedCR.js",['/View/','/Page/']);
+//loadScript("/CustomSpace/CreateRelatedCR/CreateRelatedCR.js",["/Incident/","/ServiceRequest/"]);
 
 /* Create Related CR Tasks */
-app.custom.formTasks.add('ServiceRequest', "Create Related CR", function (formObj, viewModel) {
+app.custom.formTasks.add('Incident', "Create Related CR", function (formObj, viewModel) {
     CreateRelatedCR();
 });
-app.custom.formTasks.add('Incident', "Create Related CR", function (formObj, viewModel) {
+
+app.custom.formTasks.add('ServiceRequest', "Create Related CR", function (formObj, viewModel) {
     CreateRelatedCR();
 });
 
