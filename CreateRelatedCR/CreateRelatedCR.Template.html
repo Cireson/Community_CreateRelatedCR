@@ -1,0 +1,26 @@
+<div> <!--Make sure you have an outer div if you are putting this in a kendo window-->
+    <div id="createCRHTML" class="form-horizontal">
+        <div>
+            <div class="col-group">
+                <div class="inline-spacing">
+                    <label>Please select a CR template:</label>
+                </div>
+                <div class="inline-spacing">
+                    <select id="templateselected" data-role="dropdownlist" data-bind="source: dropDownData, events: { change: valueChanged, dataBound: valueChanged }" data-text-field="Name" data-value-field="Id"></select>
+                </div>
+            </div>
+            <div class="window-buttons">
+                <button data-role="button"
+                        class="btn btn-primary"
+                        data-bind="enabled: okEnabled, events: { click: okClick }">
+                    OK
+                </button>
+                <button data-role="button"
+                        class="btn btn-primary"
+                        data-bind=" events: { click: cancelClick }">
+                    Cancel
+                </button>
+            </div> 
+        </div>
+    </div>
+</div>
