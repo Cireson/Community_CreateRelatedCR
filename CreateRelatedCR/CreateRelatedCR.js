@@ -3,10 +3,10 @@
 
 /* Create Related CR Tasks */
 app.custom.formTasks.add('ServiceRequest', "Create Related CR", function (formObj, viewModel) {
-	CreateRelatedCR();
+    CreateRelatedCR();
 });
 app.custom.formTasks.add('Incident', "Create Related CR", function (formObj, viewModel) {
-	CreateRelatedCR();
+    CreateRelatedCR();
 });
 
 /*Create Related CR Function */
@@ -27,7 +27,7 @@ function CreateRelatedCR () {
 
     function loadTemplates (templateData){
         //use requirejs to load the HTML template first
-        require(["text!/CustomSpace/CreateRelatedCR/CreateRelatedCR.Template.html"], 
+        require(["text!/CustomSpace/CreateRelatedCR/CreateRelatedCR.Template.html"],
             function (htmlTemplate) {
                 //make a jQuery obj
                 templateObj = $(htmlTemplate);
@@ -51,7 +51,7 @@ function CreateRelatedCR () {
 
                     }
                 });
-             
+
                 //create the kendo window
                 customWindow = templateObj.kendoWindow({
                     title: "Create Related CR",
@@ -61,21 +61,21 @@ function CreateRelatedCR () {
                     width: 500,
                     height: 300,
                     close: function () {
-             
+
                     },
                     activate: function () {
                         //on window activate bind the view model to the loaded template content
                         kendo.bind(templateObj, _vmWindow);
                     }
                 }).data("kendoWindow");
-             
+
                 //now open the window
                 customWindow.open().center();
             }
         );
     }
     function createChangeRequest (templateId, viewModel) {
-		//Logged in User Id
+        //Logged in User Id
         var uid = session.user.Id;
         //console.log(uid);
         $.ajax({
@@ -92,7 +92,7 @@ function CreateRelatedCR () {
                     BaseId: viewModel.BaseId,
                     Id: viewModel.Id
                 }];
-                                              
+
                 //console.log (data)
                 var CRId = data.Id;
                 var strData = {
@@ -107,9 +107,9 @@ function CreateRelatedCR () {
                     dataType: "json",
                     data: JSON.stringify(strData) ,
                     success: function (result) {
-						window.location.href = "/ChangeRequest/Edit/" + CRId
+                        window.location.href = "/ChangeRequest/Edit/" + CRId
                     }
-                });                                 
+                });
             }
         });
     };
