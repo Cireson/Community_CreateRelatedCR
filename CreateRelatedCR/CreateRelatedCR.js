@@ -1,3 +1,6 @@
+// Create Related CR
+//loadScript("/CustomSpace/CreateRelatedCR/CreateRelatedCR.js",['/View/','/Page/']);
+
 /* Create Related CR Tasks */
 app.custom.formTasks.add('ServiceRequest', "Create Related CR", function (formObj, viewModel) {
 	CreateRelatedCR();
